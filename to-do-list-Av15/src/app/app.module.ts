@@ -9,6 +9,7 @@ import { InputComponent } from './Shared/input/input.component';
 import { HomeComponent } from './Pages/home/home.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
