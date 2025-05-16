@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './Shared/card/card.component';
 import { InputComponent } from './Shared/input/input.component';
-import { HomeComponent } from './Pages/home/home.component';
-
 
 
 @NgModule({
@@ -15,7 +13,6 @@ import { HomeComponent } from './Pages/home/home.component';
     AppComponent,
     CardComponent,
     InputComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
