@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './Shared/card/card.component';
 import { InputComponent } from './Shared/input/input.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { HomeModule } from './Pages/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    InputComponent
+    InputComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
