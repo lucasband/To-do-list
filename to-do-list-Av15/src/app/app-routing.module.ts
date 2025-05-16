@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'card',
-    loadChildren: () => import('./Shared/card/card.module').then(m => m.CardModule) 
+  { path: '',
+    loadChildren: () => import('./Pages/home/home.module').then(m => m.HomeModule) 
   }, 
 ];
 

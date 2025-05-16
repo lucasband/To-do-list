@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './Shared/card/card.component';
 import { InputComponent } from './Shared/input/input.component';
 import { HomeComponent } from './Pages/home/home.component';
-import { HomeModule } from './Pages/home/home.module';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +20,6 @@ import { HomeModule } from './Pages/home/home.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
