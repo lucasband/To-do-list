@@ -9,13 +9,23 @@
 
   .img {
     background-image: url('../../../assets/images/Group.svg');
+    background-size: cover;
+    background-position: center;
     width: 40vw;
     height: 100vh;
   }
 
   .boxes {
-    background: black;
     flex: 1;
     height: 100vh;
   }
+}
+
+.img-logo {
+  background-image: url('../../../assets/images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 9vw;
+  height: 7vh;
 }
