@@ -1,1 +1,8 @@
-<p>card works!</p>
+<section class="cards">
+    <div class="square">
+        <h3>Minha Lista de Tarefas</h3>
+        <div *ngFor="let item of checklist">
+            <mat-checkbox [(ngModel)]="item.checked">{{ item.label }}</mat-checkbox>
+        </div>
+    </div>
+</section>

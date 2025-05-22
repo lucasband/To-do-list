@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-
+ checklist = [
+    { label: 'Tarefa 1', checked: false },
+    { label: 'Tarefa 2', checked: false },
+    { label: 'Tarefa 3', checked: false }
+  ];
+  
 }

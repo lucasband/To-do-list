@@ -1,0 +1,11 @@
+.cards {
+    margin: 3%;
+
+    .square {
+        background: white;
+        width: 30%;
+        height: 30vh;
+        border-radius: 5%;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    }
+}

@@ -16,6 +16,7 @@ import { InputComponent } from './Shared/input/input.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
