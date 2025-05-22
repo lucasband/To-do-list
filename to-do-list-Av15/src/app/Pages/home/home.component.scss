@@ -1,0 +1,25 @@
+.hero {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: #bc3c46;
+
+  .img {
+    background-image: url('../../../assets/images/Group.svg');
+    background-size: cover;
+    background-position: center;
+    width: 40vw;
+    height: 100vh;
+  }
+
+  .right-hero {
+    width: 50%;
+  }
+
+  .left-hero {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+  }
+}

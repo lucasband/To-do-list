@@ -20,7 +20,8 @@ import { CardComponent } from './card/card.component';
     MatIconModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    CardComponent
   ]
 })
 export class SharedModule { }
