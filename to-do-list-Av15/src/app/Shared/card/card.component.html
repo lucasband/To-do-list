@@ -1,16 +1,24 @@
 <section class="cards">
-  <div class="content">
-    <h3>Minha Lista de Tarefas</h3>
+    <div class="content">
+        <div class="superior-part">
+            <h3>Minha Lista de Tarefas</h3>
+            <div class="add-item">
+                <input class="input-activity" [(ngModel)]="novaTarefa" placeholder="Digite uma nova tarefa" />
+                <mat-icon (click)="adicionarTarefa()" style="cursor: pointer;">edit</mat-icon>
+            </div>
+        </div>
 
-    <div class="nova-tarefa">
-      <input class="input-activity" [(ngModel)]="novaTarefa" placeholder="Digite uma nova tarefa" />
-      <button (click)="adicionarTarefa()">Adicionar</button>
+        <div class="items">
+            <div *ngIf="checklist.length === 0" class="Empty-box">
+                <!-- <p>Nenhuma tarefa cadastrada. Adicione uma nova!</p> -->
+                 <img src="../../../assets/images/Martini_sticker-removebg-preview.png" alt="Copo martini vermelho">
+                 <p>Que tal adicionar uma nova tarefa?</p>
+            </div>
+            <div *ngFor="let item of checklist; let i = index" class="activitys">
+                <mat-checkbox [(ngModel)]="item.checked"></mat-checkbox>
+                <input disabled class="input-activity" [(ngModel)]="item.label" />
+                <mat-icon (click)="removerTarefa(i)" style="cursor: pointer;">delete</mat-icon>
+            </div>
+        </div>
     </div>
-
-    <div *ngFor="let item of checklist; let i = index" class="item">
-      <mat-checkbox [(ngModel)]="item.checked"></mat-checkbox>
-      <input class="input-activity" [(ngModel)]="item.label" />
-      <button (click)="removerTarefa(i)">Excluir</button>
-    </div>
-  </div>
 </section>

@@ -7,9 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
   checklist = [
-    { label: 'Tarefa 1', checked: false },
-    { label: 'Tarefa 2', checked: false },
-    { label: 'Tarefa 3', checked: false }
+    { label: '', checked: false },
   ];
 
   novaTarefa: string = '';
