@@ -1,4 +1,4 @@
-<section class="cards">
+<section color="principal" class="cards">
     <div class="content">
         <div class="superior-part">
             <h3>Minha Lista de Tarefas</h3>
@@ -11,13 +11,15 @@
         <div class="items">
             <div *ngIf="checklist.length === 0" class="Empty-box">
                 <!-- <p>Nenhuma tarefa cadastrada. Adicione uma nova!</p> -->
-                 <img src="../../../assets/images/Martini_sticker-removebg-preview.png" alt="Copo martini vermelho">
-                 <p>Que tal adicionar uma nova tarefa?</p>
+                <img src="../../../assets/images/Martini_sticker-removebg-preview.png" alt="Copo martini vermelho">
+                <p>Que tal adicionar uma nova tarefa?</p>
             </div>
-            <div *ngFor="let item of checklist; let i = index" class="activitys">
-                <mat-checkbox [(ngModel)]="item.checked"></mat-checkbox>
-                <input disabled class="input-activity" [(ngModel)]="item.label" />
-                <mat-icon (click)="removerTarefa(i)" style="cursor: pointer;">delete</mat-icon>
+            <div class="list-formatter">
+                <div *ngFor="let item of checklist; let i = index" class="activitys">
+                    <mat-checkbox [(ngModel)]="item.checked"></mat-checkbox>
+                    <input disabled class="input-activity" [(ngModel)]="item.label" />
+                    <mat-icon (click)="removerTarefa(i)" style="cursor: pointer;">delete</mat-icon>
+                </div>
             </div>
         </div>
     </div>

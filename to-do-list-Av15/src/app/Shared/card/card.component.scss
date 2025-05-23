@@ -1,7 +1,6 @@
 .cards {
     margin: 3%;
     background: #ffffff;
-    height: auto;
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     display: flex;
@@ -26,14 +25,25 @@
         }
 
         .items {
-            height: 30vh;
+            width: 100%;
+            display: flex;
+            height: 70vh;
             overflow-y: auto;
-            
+            flex-direction: column;
+            align-items: center;
+
             .activitys {
                 display: flex;
                 align-items: center;
                 width: 100%;
                 padding-bottom: 20px;
+            }
+
+            .list-formatter {
+                display: flex;
+                align-items: center;
+                width: 95%;
+                column-gap: 15px;
             }
         }
 
