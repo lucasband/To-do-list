@@ -41,9 +41,17 @@
 
             .list-formatter {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 width: 95%;
                 column-gap: 15px;
+            }
+
+            .empty-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
         }
 
@@ -53,19 +61,26 @@
             font-size: 15px;
             color: #333;
             background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            border: none;
+            border-bottom: 1px solid #bc3c46;
             transition: all 0.3s ease;
+            outline: none;
 
-            &:focus {
-                border-color: #3f51b5;
+            .input-activity:focus {
+                border: none;
+                border-bottom: 2px solid #bc3c46;
                 outline: none;
-                box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.2);
             }
 
             &::placeholder {
                 color: #aaa;
             }
+
+            .input-activity.ng-invalid.ng-touched {
+                border-bottom: 2px solid red;
+                /* Caso seja um erro de validação, exibe apenas a linha inferior em vermelho */
+            }
         }
+
     }
 }

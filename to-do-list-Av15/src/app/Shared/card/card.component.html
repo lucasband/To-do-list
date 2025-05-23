@@ -9,10 +9,9 @@
         </div>
 
         <div class="items">
-            <div *ngIf="checklist.length === 0" class="Empty-box">
-                <!-- <p>Nenhuma tarefa cadastrada. Adicione uma nova!</p> -->
-                <img src="../../../assets/images/Martini_sticker-removebg-preview.png" alt="Copo martini vermelho">
-                <p>Que tal adicionar uma nova tarefa?</p>
+            <div *ngIf="checklist.length === 0" class="empty-box">
+                <h3>Que tal adicionar uma nova tarefa?</h3>
+                <img src="../../../assets/images/bgcard.png" alt="morango vermelho">
             </div>
             <div class="list-formatter">
                 <div *ngFor="let item of checklist; let i = index" class="activitys">
