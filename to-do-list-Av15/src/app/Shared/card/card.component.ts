@@ -6,10 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
- checklist = [
+  checklist = [
     { label: 'Tarefa 1', checked: false },
     { label: 'Tarefa 2', checked: false },
     { label: 'Tarefa 3', checked: false }
   ];
-  
+
+  novaTarefa: string = '';
+
+  adicionarTarefa() {
+    if (this.novaTarefa.trim()) {
+      this.checklist.push({ label: this.novaTarefa, checked: false });
+      this.novaTarefa = '';
+    }
+  }
+
+  removerTarefa(index: number) {
+    this.checklist.splice(index, 1);
+  }
 }

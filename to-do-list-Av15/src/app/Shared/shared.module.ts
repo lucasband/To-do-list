@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { CardComponent } from './card/card.component';
+import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { CardComponent } from './card/card.component';
+import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
-
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -20,9 +19,10 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatIconModule
   ],
   exports: [
     NavbarComponent,

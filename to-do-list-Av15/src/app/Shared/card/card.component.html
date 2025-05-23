@@ -1,8 +1,16 @@
 <section class="cards">
-    <div class="square">
-        <h3>Minha Lista de Tarefas</h3>
-        <div *ngFor="let item of checklist">
-            <mat-checkbox [(ngModel)]="item.checked">{{ item.label }}</mat-checkbox>
-        </div>
+  <div class="content">
+    <h3>Minha Lista de Tarefas</h3>
+
+    <div class="nova-tarefa">
+      <input class="input-activity" [(ngModel)]="novaTarefa" placeholder="Digite uma nova tarefa" />
+      <button (click)="adicionarTarefa()">Adicionar</button>
     </div>
+
+    <div *ngFor="let item of checklist; let i = index" class="item">
+      <mat-checkbox [(ngModel)]="item.checked"></mat-checkbox>
+      <input class="input-activity" [(ngModel)]="item.label" />
+      <button (click)="removerTarefa(i)">Excluir</button>
+    </div>
+  </div>
 </section>
