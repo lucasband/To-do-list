@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Task } from 'src/app/models/task-model';
+
 
 @Component({
   selector: 'app-card',
@@ -6,19 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-checklist: { label: string; checked: boolean }[] = [];
+  checklist: Task[] = [];
+  newTask: string = '';
 
-  novaTarefa: string = '';
-
-  adicionarTarefa() {
-    if (this.novaTarefa.trim()) {
-      this.checklist.push({ label: this.novaTarefa, checked: false });
-      console.log('adicionando:', this.checklist.length)
-      this.novaTarefa = '';
+  addTask() {
+    if (this.newTask.trim()) {
+      this.checklist.push({ label: this.newTask, checked: false });
+      console.log('adicionando:', this.checklist.length) // Teste de Aumento de array
+      this.newTask = '';
     }
   }
 
-  removerTarefa(index: number) {
+  removeTask(index: number) {
     this.checklist.splice(index, 1);
+    console.log('removendo:', this.checklist.length) // Teste de Diminuição de array
   }
 }

@@ -3,8 +3,10 @@
         <div class="superior-part">
             <h3>Minha Lista de Tarefas</h3>
             <div class="add-item">
-                <input class="input-activity" [(ngModel)]="novaTarefa" placeholder="Digite uma nova tarefa" />
-                <mat-icon (click)="adicionarTarefa()" style="cursor: pointer;">add</mat-icon>
+                <input class="input-activity" [(ngModel)]="newTask" placeholder="Digite uma nova tarefa" />
+                <button mat-icon-button (click)="addTask()" aria-label="Adicionar tarefa">
+                    <mat-icon>add</mat-icon>
+                </button>
             </div>
         </div>
 
@@ -16,8 +18,8 @@
             <div class="list-formatter">
                 <div *ngFor="let item of checklist; let i = index" class="activitys">
                     <mat-checkbox [(ngModel)]="item.checked"></mat-checkbox>
-                    <input disabled class="input-activity" [(ngModel)]="item.label" />
-                    <mat-icon (click)="removerTarefa(i)" style="cursor: pointer;">delete</mat-icon>
+                    <input readonly class="input-activity" [value]="item.label" />
+                    <mat-icon (click)="removeTask(i)" style="cursor: pointer;">delete</mat-icon>
                 </div>
             </div>
         </div>
