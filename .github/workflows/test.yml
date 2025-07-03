@@ -1,5 +1,3 @@
-name: Angular CI
-
 on:
   push:
     branches: [ main ]
@@ -22,8 +20,13 @@ jobs:
     - name: 📦 Instalar dependências
       run: npm ci
 
-    - name: 🛠️ Build da aplicação
-      run: npm run build
+    - name: 🧪 Rodar testes com cobertura
+      run: npm test -- --code-coverage
 
-    - name: ✅ Rodar testes
-      run: npm test
+    - name: 📤 Enviar cobertura para Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} 
+        files: ./coverage/**/lcov.info
+        flags: unittests
+        name: codecov-upload
