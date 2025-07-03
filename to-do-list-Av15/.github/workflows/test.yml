@@ -1,36 +1,29 @@
-name: Run tests and upload coverage
+name: Angular CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v3
+    - name: 🧾 Checkout do código
+      uses: actions/checkout@v3
 
-      - name: Instalar Chrome (necessário para ChromeHeadless)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+    - name: 🔧 Configurar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
 
-      - name: Configurar Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: 📦 Instalar dependências
+      run: npm ci
 
-      - name: Instalar dependências
-        run: npm ci
+    - name: 🛠️ Build da aplicação
+      run: npm run build --if-present
 
-      - name: Rodar testes com cobertura
-        run: npm run test -- --code-coverage --watch=false --browsers=ChromeHeadless
-
-      - name: Upload cobertura para Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov.info
+    - name: ✅ Rodar testes
+      run: npm test --if-present
