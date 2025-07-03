@@ -1,31 +1,29 @@
-name: Run tests and upload coverage
+name: Angular CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v3
+    - name: 📥 Checkout do código
+      uses: actions/checkout@v3
 
-      - name: Configurar Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: ⚙️ Configurar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
 
-      - name: Instalar dependências
-        run: npm ci
+    - name: 📦 Instalar dependências
+      run: npm ci
 
-      - name: Rodar testes com cobertura
-        run: npm run test -- --code-coverage --watch=false
+    - name: 🛠️ Build da aplicação
+      run: npm run build
 
-      - name: Upload cobertura para Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov.info
+    - name: ✅ Rodar testes
+      run: npm test
